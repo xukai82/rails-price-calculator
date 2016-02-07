@@ -22,7 +22,7 @@ class NupackController < ApplicationController
 		totalCost = basePrice * 1.05 * (1 + 0.012*numOfPeople + materialMarkup)
 		totalCost = totalCost.round(2)
 
-  		render :text => totalCost
+  		render :json => {:totalCost => totalCost}
 	end
 
 end
