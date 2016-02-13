@@ -18,4 +18,11 @@ class NupackControllerTest < ActionController::TestCase
     assert_equal 13707.63, result['totalCost']      
   end
 
+
+  # test "should get some" do
+  #   get(:get_material_markup, {'material' => 'food'})
+  #   result = JSON.parse(@response.body)
+  #   assert_equal 8888, result
+  # end
+
 end
