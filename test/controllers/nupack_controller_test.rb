@@ -2,6 +2,11 @@ require 'test_helper'
 
 class NupackControllerTest < ActionController::TestCase
   test "should get calculate_total_cost" do
+    # test 0
+    get(:calculate_total_cost, {'base_price' => 111})
+    result = JSON.parse(@response.body)
+    assert_equal 1, result['error']
+
   	# test 1
     get(:calculate_total_cost, {'base_price' => 1299.99, 'num_of_people' => 3, 'material' => 'food'})
     result = JSON.parse(@response.body)
