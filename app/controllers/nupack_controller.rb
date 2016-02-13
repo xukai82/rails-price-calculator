@@ -1,17 +1,17 @@
 
 class NupackController < ApplicationController
 
-	def calculateTotalCost
-		base_price = params['basePrice'].to_f
-		num_of_people = params['numOfPeople'].to_i
+	def calculate_total_cost
+		base_price = params['base_price'].to_f
+		num_of_people = params['num_of_people'].to_i
 		material = params['material']
 
 		material_markup = get_material_markup(material)
 
-		totalCost = base_price * 1.05 * (1 + 0.012 * num_of_people + material_markup)
-		totalCost = totalCost.round(2)
+		total_cost = base_price * 1.05 * (1 + 0.012 * num_of_people + material_markup)
+		total_cost = total_cost.round(2)
 
-  		render :json => {:totalCost => totalCost}
+  		render :json => {:total_cost => total_cost}
 	end
 
 	def get_material_markup(material = '')

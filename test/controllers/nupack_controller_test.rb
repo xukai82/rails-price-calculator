@@ -1,21 +1,21 @@
 require 'test_helper'
 
 class NupackControllerTest < ActionController::TestCase
-  test "should get calculateTotalCost" do
+  test "should get calculate_total_cost" do
   	# test 1
-    get(:calculateTotalCost, {'basePrice' => 1299.99, 'numOfPeople' => 3, 'material' => 'food'})
+    get(:calculate_total_cost, {'base_price' => 1299.99, 'num_of_people' => 3, 'material' => 'food'})
     result = JSON.parse(@response.body)
-    assert_equal 1591.58, result['totalCost']
+    assert_equal 1591.58, result['total_cost']
 
 	# test 2
-    get(:calculateTotalCost, {'basePrice' => 5432.00, 'numOfPeople' => 1, 'material' => 'drugs'})
+    get(:calculate_total_cost, {'base_price' => 5432.00, 'num_of_people' => 1, 'material' => 'drugs'})
     result = JSON.parse(@response.body)
-    assert_equal 6199.81, result['totalCost']
+    assert_equal 6199.81, result['total_cost']
 
     # test 3
-    get(:calculateTotalCost, {'basePrice' => 12456.95, 'numOfPeople' => 4, 'material' => 'books'})
+    get(:calculate_total_cost, {'base_price' => 12456.95, 'num_of_people' => 4, 'material' => 'books'})
     result = JSON.parse(@response.body)
-    assert_equal 13707.63, result['totalCost']      
+    assert_equal 13707.63, result['total_cost']      
   end
 
 
